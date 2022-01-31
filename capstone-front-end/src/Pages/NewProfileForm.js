@@ -11,20 +11,6 @@ const NewProfileForm = (props) => {
     submitDisabled: true,
   });
 
-  const [isProfileFormVisible, setProfileFormVisible] = useState(true);
-  const [buttonText, setButtonText] = useState("hide board form");
-
-  const toggleNewProfileForm = () => {
-    setProfileFormVisible(!isProfileFormVisible);
-
-    if (isProfileFormVisible) {
-      setButtonText("show profile form");
-    } else {
-      setButtonText("hide profile form");
-    }
-  };
-
-  // Every time user types in title or owner, updating state
   const onUsernameChange = (event) => {
     let usernameValid = event.target.value ? true : false;
     let submitValid = formFields.zipcodeValid && usernameValid;
@@ -82,7 +68,6 @@ const NewProfileForm = (props) => {
   return (
     <div className="text-center">
       <h2>Create Profile</h2>
-      {isProfileFormVisible ? (
         <form onSubmit={onFormSubmit}>
           <p className="">
             Username:
@@ -108,13 +93,6 @@ const NewProfileForm = (props) => {
             value="submit"
           />
         </form>
-      ) : null}
-      <button
-        className="btn btn-outline-info btn-default"
-        onClick={toggleNewProfileForm}
-      >
-        {buttonText}
-      </button>
     </div>
   );
 };
