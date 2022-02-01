@@ -1,6 +1,6 @@
 import Welcome from './Pages/Welcome';
 import NewProfileForm from './Pages/NewProfileForm';
-import HumanProfile from './Pages/HumanProfile';
+import PetProfile from './Pages/PetProfile';
 import ErrorPage from './Pages/ErrorPage';
 // import SearchBar from './Components/SearchBar';
 import './App.css';
@@ -12,7 +12,7 @@ function App() {
       <Route path="/"element={<Welcome/>} />
       {/* <Route element={<SearchBar/>} /> */}
       <Route path="/createprofile/"element={<NewProfileForm/>} />
-      <Route path="/profile/:username"element={<HumanProfile/>} />
+      <Route path="/profile/:name"element={<PetProfile/>} />
       <Route path="*"element={<ErrorPage/>} />
     </Routes>
   </Router>
