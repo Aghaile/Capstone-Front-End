@@ -1,37 +1,88 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import { Multiselect } from 'multiselect-react-dropdown';
+
+
 
 const NewProfileForm = (props) => {
+  
+
   const [formFields, setFormFields] = useState({
-    username: "",
+    name: "",
     zipcode: Int16Array,
-    usernameValid: false,
+    bio: "",
+    age: Int16Array,
+    gender: {this.state()= {options:[{name: 'male', id: 1},{name: 'female', id: 2}]}},
+    species:"",
+    phone_number: Int16Array,
+    nameValid: false,
     zipcodeValid: false,
+    phone_numberValid:false,
     submitDisabled: true,
   });
 
-  const onUsernameChange = (event) => {
-    let usernameValid = event.target.value ? true : false;
-    let submitValid = formFields.zipcodeValid && usernameValid;
+  const onNameChange = (event) => {
+    let nameValid = event.target.value ? true : false;
+    let submitValid = formFields.zipcodeValid && nameValid && phone_number;
 
     setFormFields({
       ...formFields,
-      username: event.target.value,
-      usernameValid: usernameValid,
+      name: event.target.value,
+      nameValid: nameValid,
       submitDisabled: !submitValid,
     });
   };
 
   const onZipcodeChange = (event) => {
     let zipcodeValid = event.target.value ? true : false;
-    let submitValid = formFields.usernameValid && zipcodeValid;
+    let submitValid = formFields.nameValid && zipcodeValid && phone_number;
 
     setFormFields({
       ...formFields,
       zipcode: event.target.value,
       zipcodeValid: zipcodeValid,
       submitDisabled: !submitValid,
+    });
+  };
+
+  const onPhone_NumberChange = (event) => {
+    let phone_numberValid = event.target.value ? true : false;
+    let submitValid = formFields.nameValid && phone_numberValid && zipcodeValid;
+
+    setFormFields({
+      ...formFields,
+      phone_number: event.target.value,
+      phone_numberValid: phone_numberValid,
+      submitDisabled: !submitValid,
+    });
+  };
+
+  const onBioChange = (event) => {
+    setFormFields({
+      ...formFields,
+      bio: event.target.value,
+    });
+  };
+
+  const onAgeChange = (event) => {
+    setFormFields({
+      ...formFields,
+      age: event.target.value,
+    });
+  };
+
+  const onGenderChange = (event) => {
+    setFormFields({
+      ...formFields,
+      gender: event.target.value,
+    });
+  };
+
+  const onSpeciesChange = (event) => {
+    setFormFields({
+      ...formFields,
+      species: event.target.value,
     });
   };
 
