@@ -61,7 +61,7 @@ const NewProfileForm = (props) => {
 
   const onPhoneNumberChange = (event) => {
     let phone_numberValid = event.target.value ? true : false;
-    let submitValid = formFields.nameValid && formFields.phone_numberValid && formFields.zipcodeValid;
+    let submitValid = formFields.nameValid && formFields.phoneNumberValid && formFields.zipcodeValid;
 
     setFormFields({
       ...formFields,
@@ -72,38 +72,30 @@ const NewProfileForm = (props) => {
   };
 
   const onBioChange = (event) => {
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
     setFormFields({
       ...formFields,
       bio: event.target.value,
-      submitDisabled: !submitValid,
     });
   };
 
   const onAgeChange = (event) => {
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
     setFormFields({
       ...formFields,
       age: event.target.value,
-      submitDisabled: !submitValid,
     });
   };
 
   const onGenderChange = (event) => {
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
     setFormFields({
       ...formFields,
       gender: event.target.value,
-      submitDisabled: !submitValid,
     });
   };
 
   const onSpeciesChange = (event) => {
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
     setFormFields({
       ...formFields,
       species: event.target.value,
-      submitDisabled: !submitValid,
     });
   };
 
