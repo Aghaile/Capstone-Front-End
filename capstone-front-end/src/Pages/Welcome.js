@@ -39,7 +39,7 @@ const homePage = () => {
                 <div>
                     <SearchBar placeholder="Enter your username!"/> 
                 </div>
-                <button>Log In</button>
+                <button><Link to="/profile/:username">Log In</Link></button>
                 <button><Link to="/createprofile">Create Profile</Link></button>
             </div>
         // </div>

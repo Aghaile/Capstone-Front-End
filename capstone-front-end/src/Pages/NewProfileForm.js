@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import {Link} from "react-router-dom";
 // import { Multiselect } from 'multiselect-react-dropdown';
 
 const NewProfileForm = (props) => {
@@ -243,7 +244,8 @@ const NewProfileForm = (props) => {
             value="submit"
           />
         </form>
-    </div>
+    <button className="goHomeButton"><Link to="/">Return Home</Link></button>
+  </div>
   );
 };
 
