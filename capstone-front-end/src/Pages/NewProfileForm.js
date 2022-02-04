@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import {Link} from "react-router-dom";
 // import { Multiselect } from 'multiselect-react-dropdown';
 
 const NewProfileForm = (props) => {
@@ -61,49 +62,50 @@ const NewProfileForm = (props) => {
 
   const onPhoneNumberChange = (event) => {
     let phone_numberValid = event.target.value ? true : false;
-    let submitValid = formFields.nameValid && formFields.phone_numberValid && formFields.zipcodeValid;
-
+    // let new_phone_number = event.target.value.length > this.maxLength ? this.value : this.value.slice(0, this.maxLength)
+    let submitValid = formFields.nameValid && formFields.phoneNumberValid && formFields.zipcodeValid;
+    const new_phone = event.target.value
     setFormFields({
       ...formFields,
       phone: event.target.value,
       phoneNumberValid: phone_numberValid,
       submitDisabled: !submitValid,
     });
+
+    return (
+      <div>
+        {new_phone.length > 10 && 
+        <h2>"Phone number must be 10 digits long."</h2>
+        } 
+      </div>
+    )
   };
 
   const onBioChange = (event) => {
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
     setFormFields({
       ...formFields,
       bio: event.target.value,
-      submitDisabled: !submitValid,
     });
   };
 
   const onAgeChange = (event) => {
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
     setFormFields({
       ...formFields,
       age: event.target.value,
-      submitDisabled: !submitValid,
     });
   };
 
   const onGenderChange = (event) => {
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
     setFormFields({
       ...formFields,
       gender: event.target.value,
-      submitDisabled: !submitValid,
     });
   };
 
   const onSpeciesChange = (event) => {
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
     setFormFields({
       ...formFields,
       species: event.target.value,
-      submitDisabled: !submitValid,
     });
   };
 
@@ -169,10 +171,23 @@ const NewProfileForm = (props) => {
       });
   };
 
+  // const verifyPhone= props.phone;
+  // const verifyZipcode = props.zipcode;
+
   return (
     <div className="text-center">
       <h2>Create Profile</h2>
-        <form onSubmit={onFormSubmit}>
+        <form 
+        // value={formFields.phone != 10 && 
+        //   alert("Phone number must be 10 digits long.")
+        // }
+        // {...verifyPhone.length > 10 && 
+        // <h2>Phone number must be 10 digits long.</h2>
+        // } 
+        // {...verifyZipcode.length > 5 && 
+        // <h2>Zipcode must be 5 digits long.</h2>
+        // }
+        onSubmit={onFormSubmit}>
           <p className="">
             Name:
             <input
@@ -203,7 +218,7 @@ const NewProfileForm = (props) => {
           <p>
             Age:
           <input
-            type="number"
+            type="number" 
             name="ageProfile"
             value={formFields.age}
             onChange={onAgeChange}
@@ -212,7 +227,7 @@ const NewProfileForm = (props) => {
           <p>
             Female:
           <input
-            type="radio"
+            type="radio" 
             name="genderProfile"
             value={formFields.gender}
             onChange={onGenderChange}
@@ -237,9 +252,9 @@ const NewProfileForm = (props) => {
             />
           <p>
             Phone Number:
-          <input
-            type="number"
-            name="ageProfile"
+            <input 
+            name="phoneNum"
+            type = "number"
             value={formFields.phone_number}
             onChange={onPhoneNumberChange}
             />
@@ -251,7 +266,8 @@ const NewProfileForm = (props) => {
             value="submit"
           />
         </form>
-    </div>
+    <button className="goHomeButton"><Link to="/">Return Home</Link></button>
+  </div>
   );
 };
 
