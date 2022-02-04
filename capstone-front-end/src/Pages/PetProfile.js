@@ -1,16 +1,18 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import {Link} from "react-router-dom";
+import BigSquare from '../Components/BigSquare';
+import "./PetProfile.css";
 
 
 function PetProfile(){
-    let { username } = useParams();
     return (
         <div>
-            <div className="profileHome">
-                Welcome, { username }!
-            </div>
+        <div className="greeting">
+            <BigSquare />
+        </div>
+        <div className="returnHomeButtonOnProfile">
             <button className="goHomeButton"><Link to="/">Return Home</Link></button>
+        </div>
         </div>
     )
 }

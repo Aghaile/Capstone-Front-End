@@ -1,0 +1,9 @@
+.greeting{
+    display: flex;
+    margin: 50px;
+}
+
+.returnHomeButtonOnProfile{
+    display: flex;
+    justify-content: center; 
+}
