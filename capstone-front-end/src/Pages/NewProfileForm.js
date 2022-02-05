@@ -12,21 +12,21 @@ const NewProfileForm = (props) => {
     zipcode: "",
     bio: "",
     age: "",
-    gender: 
-      <fieldset>
-          Male
-          <input
-            value="male"
-            checked={genderValue === "male"}
-            {...genderInputProps}
-          />
-          Female
-          <input
-            value="female"
-            checked={genderValue === "female"}
-            {...genderInputProps}
-          />
-      </fieldset>,
+    gender: "",
+      // <fieldset>
+      //     Male
+      //     <input
+      //       value="male"
+      //       checked={genderValue === "male"}
+      //       {...genderInputProps}
+      //     />
+      //     Female
+      //     <input
+      //       value="female"
+      //       checked={genderValue === "female"}
+      //       {...genderInputProps}
+      //     />
+      // </fieldset>,
     species:"",
     phone: "",
     nameValid: false,
@@ -138,9 +138,9 @@ const NewProfileForm = (props) => {
     //   speciesData:formFields.species,
     //   phoneData: formFields.phone
     // });
-
+    // "http://127.0.0.1:5000/pet"
     axios
-      .post(`http://localhost:5000/pet`,{  
+      .post(process.env.REACT_APP_BACKEND_URL + "/pet",{  
         name: formFields.name,
         zipcode: formFields.zipcode,
         bio: formFields.bio,
@@ -162,7 +162,7 @@ const NewProfileForm = (props) => {
           speciesData:"",
           phoneData: "",
           submitDisabled: true,
-        });
+        });      
       })
 
       .catch(function (error) {
@@ -214,18 +214,9 @@ const NewProfileForm = (props) => {
             />
           </p>
           <p>
-            Female:
+            Gender:
           <input
-            type="radio" 
-            name="genderProfile"
-            value={formFields.gender}
-            onChange={onGenderChange}
-            />
-          </p>
-          <p>
-            Male:
-          <input
-            type="radio"
+            type="text"
             name="genderProfile"
             value={formFields.gender}
             onChange={onGenderChange}
