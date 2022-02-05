@@ -13,7 +13,7 @@ const Welcome = () => {
                     <SearchBar placeholder="Enter your pet login!"/> 
                 </div>
                 <button><Link to="/profile/:login">Log In</Link></button>
-                <button><Link to="/createprofile">Create Profile</Link></button>
+                <button><Link to="/">Create Profile</Link></button>
             </div>
     );
 };

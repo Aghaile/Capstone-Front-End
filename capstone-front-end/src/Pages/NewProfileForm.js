@@ -12,22 +12,21 @@ const NewProfileForm = (props) => {
     zipcode: "",
     bio: "",
     age: "",
-    // gender: this.state = {options:[{"female":"male"}]},
-    gender: 
-      <fieldset>
-          Male
-          <input
-            value="male"
-            checked={genderValue === "male"}
-            {...genderInputProps}
-          />
-          Female
-          <input
-            value="female"
-            checked={genderValue === "female"}
-            {...genderInputProps}
-          />
-      </fieldset>,
+    gender: "",
+      // <fieldset>
+      //     Male
+      //     <input
+      //       value="male"
+      //       checked={genderValue === "male"}
+      //       {...genderInputProps}
+      //     />
+      //     Female
+      //     <input
+      //       value="female"
+      //       checked={genderValue === "female"}
+      //       {...genderInputProps}
+      //     />
+      // </fieldset>,
     species:"",
     phone: "",
     nameValid: false,
@@ -130,25 +129,25 @@ const NewProfileForm = (props) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    props.addProfileCallback({
-      nameData: formFields.name,
-      zipcodeData: formFields.zipcode,
-      bioData: formFields.bio,
-      ageData: formFields.age,
-      genderData: formFields.gender,
-      speciesData:formFields.species,
-      phoneData: formFields.phone
-    });
-
+    // props.addProfileCallback({
+    //   nameData: formFields.name,
+    //   zipcodeData: formFields.zipcode,
+    //   bioData: formFields.bio,
+    //   ageData: formFields.age,
+    //   genderData: formFields.gender,
+    //   speciesData:formFields.species,
+    //   phoneData: formFields.phone
+    // });
+    // "http://127.0.0.1:5000/pet"
     axios
-      .post(process.env.REACT_APP_BACKEND_URL, {
+      .post(process.env.REACT_APP_BACKEND_URL + "/pet",{  
         name: formFields.name,
         zipcode: formFields.zipcode,
         bio: formFields.bio,
         age: formFields.age,
         gender: formFields.gender,
         species:formFields.species,
-        phone: formFields.phone
+        phone_number: formFields.phone
       })
 
       .then(function (response) {
@@ -163,7 +162,7 @@ const NewProfileForm = (props) => {
           speciesData:"",
           phoneData: "",
           submitDisabled: true,
-        });
+        });      
       })
 
       .catch(function (error) {
@@ -171,22 +170,12 @@ const NewProfileForm = (props) => {
       });
   };
 
-  // const verifyPhone= props.phone;
-  // const verifyZipcode = props.zipcode;
 
   return (
     <div className="text-center">
       <h2>Create Profile</h2>
         <form 
-        // value={formFields.phone != 10 && 
-        //   alert("Phone number must be 10 digits long.")
-        // }
-        // {...verifyPhone.length > 10 && 
-        // <h2>Phone number must be 10 digits long.</h2>
-        // } 
-        // {...verifyZipcode.length > 5 && 
-        // <h2>Zipcode must be 5 digits long.</h2>
-        // }
+    
         onSubmit={onFormSubmit}>
           <p className="">
             Name:
@@ -225,18 +214,9 @@ const NewProfileForm = (props) => {
             />
           </p>
           <p>
-            Female:
+            Gender:
           <input
-            type="radio" 
-            name="genderProfile"
-            value={formFields.gender}
-            onChange={onGenderChange}
-            />
-          </p>
-          <p>
-            Male:
-          <input
-            type="radio"
+            type="text"
             name="genderProfile"
             value={formFields.gender}
             onChange={onGenderChange}
@@ -249,16 +229,16 @@ const NewProfileForm = (props) => {
             name="speciesProfile"
             value={formFields.species}
             onChange={onSpeciesChange}
-            />
+            /> 
+          </p>
           <p>
             Phone Number:
             <input 
             name="phoneNum"
-            type = "number"
+            type = "text"
             value={formFields.phone_number}
             onChange={onPhoneNumberChange}
             />
-          </p>
           </p>
           <input
             disabled={formFields.submitDisabled}
@@ -266,13 +246,19 @@ const NewProfileForm = (props) => {
             value="submit"
           />
         </form>
-    <button className="goHomeButton"><Link to="/">Return Home</Link></button>
+    <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
   </div>
   );
 };
 
 NewProfileForm.propTypes = {
-  addProfileCallback: PropTypes.func.isRequired,
+  // addProfileCallback: PropTypes.func.isRequired,
+  addProfileCallback: PropTypes.func
 };
 
 export default NewProfileForm;
+
+
+// capture keystrokes
+//check onSubmit and reject non-numbers
+//phone number component (String type in db)

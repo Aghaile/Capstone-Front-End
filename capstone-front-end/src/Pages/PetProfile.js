@@ -1,14 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import BigSquare from '../Components/BigSquare';
-import "./PetProfile.css";
 
+import "./PetProfile.css";
+// import { UserContext } from "./UserContext";
+
+// const msg = useContext(UserContext);
 
 function PetProfile(){
     return (
         <div>
         <div className="greeting">
-            <BigSquare />
+            <BigSquare/>
         </div>
         <div className="returnHomeButtonOnProfile">
             <button className="goHomeButton"><Link to="/">Return Home</Link></button>
