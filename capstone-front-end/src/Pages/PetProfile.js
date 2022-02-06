@@ -13,6 +13,10 @@ function PetProfile(){
         <div className="greeting">
             <BigSquare/>
         </div>
+        <div className="manageProfileButtons">
+            <button>Update Profile</button>
+            <button>Delete Profile</button>
+        </div>
         <div className="returnHomeButtonOnProfile">
             <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
         </div>

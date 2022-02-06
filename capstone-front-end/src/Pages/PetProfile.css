@@ -1,9 +1,18 @@
 .greeting{
     display: flex;
-    margin: 50px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left:20px;
+    margin-right:20px;
 }
 
 .returnHomeButtonOnProfile{
     display: flex;
     justify-content: center; 
+}
+
+.manageProfileButtons{
+    display: flex;
+    justify-content: center; 
+    margin: 10px;
 }

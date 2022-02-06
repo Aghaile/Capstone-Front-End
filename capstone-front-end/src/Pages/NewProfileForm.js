@@ -4,9 +4,8 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 // import { Multiselect } from 'multiselect-react-dropdown';
 
-const NewProfileForm = (props) => {
+const NewProfileForm = () => {
   
-  const [genderValue, genderInputProps] = useRadioButtons("gender");
   const [formFields, setFormFields] = useState({
     name: "",
     zipcode: "",
@@ -63,7 +62,7 @@ const NewProfileForm = (props) => {
     let phone_numberValid = event.target.value ? true : false;
     // let new_phone_number = event.target.value.length > this.maxLength ? this.value : this.value.slice(0, this.maxLength)
     let submitValid = formFields.nameValid && formFields.phoneNumberValid && formFields.zipcodeValid;
-    const new_phone = event.target.value
+    // const new_phone = event.target.value
     setFormFields({
       ...formFields,
       phone: event.target.value,
@@ -71,13 +70,13 @@ const NewProfileForm = (props) => {
       submitDisabled: !submitValid,
     });
 
-    return (
-      <div>
-        {new_phone.length > 10 && 
-        <h2>"Phone number must be 10 digits long."</h2>
-        } 
-      </div>
-    )
+    // return (
+    //   <div>
+    //     {new_phone.length > 10 && 
+    //     <h2>"Phone number must be 10 digits long."</h2>
+    //     } 
+    //   </div>
+    // )
   };
 
   const onBioChange = (event) => {
@@ -108,24 +107,22 @@ const NewProfileForm = (props) => {
     });
   };
 
-  function useRadioButtons(name) {
-    const [value, setState] = useState(null);
+  // function useRadioButtons(name) {
+  //   const [value, setState] = useState(null);
   
-    const handleChange = e => {
-      setState(e.target.value);
-    };
+  //   const handleChange = e => {
+  //     setState(e.target.value);
+  //   };
   
-    const inputProps = {
-      name,
-      type: "radio",
-      onChange: handleChange
-    };
+  //   const inputProps = {
+  //     name,
+  //     type: "radio",
+  //     onChange: handleChange
+  //   };
   
-    return [value, inputProps];
-  }
+  //   return [value, inputProps];
+  // }
   
-
-  // When submitting this button, should make a POST, request to /boards to add title and owner info
   const onFormSubmit = (event) => {
     event.preventDefault();
 
