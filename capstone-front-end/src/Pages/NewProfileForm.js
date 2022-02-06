@@ -129,25 +129,15 @@ const NewProfileForm = (props) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    // props.addProfileCallback({
-    //   nameData: formFields.name,
-    //   zipcodeData: formFields.zipcode,
-    //   bioData: formFields.bio,
-    //   ageData: formFields.age,
-    //   genderData: formFields.gender,
-    //   speciesData:formFields.species,
-    //   phoneData: formFields.phone
-    // });
-    // "http://127.0.0.1:5000/pet"
     axios
-      .post(process.env.REACT_APP_BACKEND_URL + "/pet",{  
+      .post("http://127.0.0.1:5000/pet",{  
         name: formFields.name,
         zipcode: formFields.zipcode,
         bio: formFields.bio,
         age: formFields.age,
         gender: formFields.gender,
         species:formFields.species,
-        phone_number: formFields.phone
+        phone: formFields.phone
       })
 
       .then(function (response) {
@@ -236,7 +226,7 @@ const NewProfileForm = (props) => {
             <input 
             name="phoneNum"
             type = "text"
-            value={formFields.phone_number}
+            value={formFields.phone}
             onChange={onPhoneNumberChange}
             />
           </p>

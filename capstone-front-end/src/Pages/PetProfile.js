@@ -14,7 +14,7 @@ function PetProfile(){
             <BigSquare/>
         </div>
         <div className="returnHomeButtonOnProfile">
-            <button className="goHomeButton"><Link to="/">Return Home</Link></button>
+            <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
         </div>
         </div>
     )
