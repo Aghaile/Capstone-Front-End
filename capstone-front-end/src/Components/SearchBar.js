@@ -1,22 +1,24 @@
 import React, {useState} from "react";
 import "./SearchBar.css";
+import axios from "axios";
+
 
 function SearchBar({placeholder, data}){
 
     const [filteredData, setFilteredData] = useState([]);
 
     const handleFilter = (event) => {
-       const searchTerm = event.target.value;
-       const newFilter = data.filter((value) => {
+        const searchTerm = event.target.value;
+        const newFilter = data.filter((value) => {
             return value.username.toLowercase().includes(searchTerm.toLowercase());
-       });
-       if (searchTerm === ""){
-           setFilteredData([])
-       }else{
-       setFilteredData(newFilter);
-       }
+        });
+        if (searchTerm === ""){
+            setFilteredData([])
+        }else{
+        setFilteredData(newFilter);
+        }
     };
-
+    
     return (
         <div className="search">
             <div className="searchInput">
@@ -32,7 +34,7 @@ function SearchBar({placeholder, data}){
             )}
         </div>
     )
-}
+            };
 
 export default SearchBar; 
 

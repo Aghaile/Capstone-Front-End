@@ -130,18 +130,18 @@ const NewProfileForm = (props) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    props.addProfileCallback({
-      nameData: formFields.name,
-      zipcodeData: formFields.zipcode,
-      bioData: formFields.bio,
-      ageData: formFields.age,
-      genderData: formFields.gender,
-      speciesData:formFields.species,
-      phoneData: formFields.phone
-    });
+    // props.addProfileCallback({
+    //   nameData: formFields.name,
+    //   zipcodeData: formFields.zipcode,
+    //   bioData: formFields.bio,
+    //   ageData: formFields.age,
+    //   genderData: formFields.gender,
+    //   speciesData:formFields.species,
+    //   phoneData: formFields.phone
+    // });
 
     axios
-      .post(process.env.REACT_APP_BACKEND_URL, {
+      .post("http://127.0.0.1:5000/pet", {
         name: formFields.name,
         zipcode: formFields.zipcode,
         bio: formFields.bio,
@@ -271,8 +271,8 @@ const NewProfileForm = (props) => {
   );
 };
 
-NewProfileForm.propTypes = {
-  addProfileCallback: PropTypes.func.isRequired,
-};
+// NewProfileForm.propTypes = {
+//   addProfileCallback: PropTypes.func,
+// };
 
 export default NewProfileForm;

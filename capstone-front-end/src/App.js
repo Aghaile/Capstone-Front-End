@@ -6,10 +6,22 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+// import AppContext from './components/AppContext';
 
 function App() {
-     
-  return <Router>
+
+  // const [activePet, setActivePet] = useState('Null');
+  // const userSettings = {
+  //   user: activePet,
+  //   setActivePet,
+  // };
+
+  return (
+    <div>
+    {/* <AppContext.Provider value={userSettings}>
+    </AppContext.Provider> */}
+  
+  <Router>
     <Routes>
       <Route path="/"element={<Welcome/>}/>
       <Route path="/createprofile/"element={<NewProfileForm/>} />
@@ -17,6 +29,8 @@ function App() {
       <Route path="*"element={<ErrorPage/>} />
     </Routes>
   </Router>
+</div>
+  );
 };
 
 export default App;
