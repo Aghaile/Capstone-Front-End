@@ -8,13 +8,13 @@ import SearchBar from "../Components/SearchBar";
 const Welcome = () => {
 
     const [id, setId] = useState("");
-    const [petName, setCurrentPetName] = useState()
+    const [pet, setCurrentPetName] = useState()
 
-    const greet = () => {
-        const petName = {id};
-        const response = axios.get(
-            "http://127.0.0.1:5000/pet" + petName.id, petName
-        ); setCurrentPetName(response.data)
+    const greet = (event) => {
+        event.preventDefault();
+        const pet = {id};
+        const response = axios.get("http://127.0.0.1:5000/pet" + pet.id, pet); 
+        setCurrentPetName(response.data)
         console.log(response.data)
     };
 

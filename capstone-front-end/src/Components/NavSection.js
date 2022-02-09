@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const NavSection = (props) => {
     return (<div className="navBar">
                 <h1>Hi,
-                    <button className="name"><Link to="/profile/:login">{props.petName}</Link></button>
+                    <button className="name"><Link to="/profile/:login">{props.pet}</Link></button>
                 </h1>
                 <h2>
                     <button className="yourPals"><Link to="/profile/:yourpals">Your Pals</Link></button>

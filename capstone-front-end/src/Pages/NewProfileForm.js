@@ -29,7 +29,7 @@ const NewProfileForm = (props) => {
           />
       </fieldset>,
     species:"",
-    phone: "",
+    phone_number: "",
     nameValid: false,
     zipcodeValid: false,
     phoneNumberValid:false,
@@ -67,7 +67,7 @@ const NewProfileForm = (props) => {
     const new_phone = event.target.value
     setFormFields({
       ...formFields,
-      phone: event.target.value,
+      phone_number: event.target.value,
       phoneNumberValid: phone_numberValid,
       submitDisabled: !submitValid,
     });
@@ -148,7 +148,7 @@ const NewProfileForm = (props) => {
         age: formFields.age,
         gender: formFields.gender,
         species:formFields.species,
-        phone: formFields.phone
+        phone_number: formFields.phone_number
       })
 
       .then(function (response) {
