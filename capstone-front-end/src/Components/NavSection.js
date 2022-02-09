@@ -7,6 +7,12 @@ const NavSection = (props) => {
                 <h1>Hi,
                     <button className="name"><Link to="/profile/:login">{props.petName}</Link></button>
                 </h1>
+                <h2>
+                    <button className="yourPals"><Link to="/profile/:yourpals">Your Pals</Link></button>
+                </h2>
+                <h2>
+                    <button className="findPals"><Link to="/profile/:findpals">Find Pals</Link></button>
+                </h2>
             </div>)
 }
 export default NavSection;
