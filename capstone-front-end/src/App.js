@@ -1,23 +1,33 @@
 import Welcome from './Pages/Welcome';
 import NewProfileForm from './Pages/NewProfileForm';
 import PetProfile from './Pages/PetProfile';
-import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import ThemeContext from './ThemeContext';
+import React, { useState } from "react";
 
 
 function App() {
+  const [currentPet, setCurrentPet] = useState({})
+  const petSettings = {
+    petVariable: currentPet,
+    setCurrentPet,
+  };
+  console.log(currentPet);
 
   return (
-  <Router>
-    <Routes>
-      <Route path="/welcome"element={<Welcome/>}/>
-      <Route path="/profile/:login"element={<PetProfile/>} />
-      {/* <Route path="/pet"element={<PetProfile/>} /> */}
-      <Route path="/"element={<NewProfileForm/>} />
-      {/* <Route path="*"element={<ErrorPage/>} /> */}
-    </Routes>
-  </Router>
+    <ThemeContext.Provider value = {petSettings}>
+        <Router>
+          <Routes>
+            <Route path="/welcome"element={<Welcome/>}/>
+            <Route path={"/profile"}element={<PetProfile/>} />
+            {/* <Route path="/pet"element={<PetProfile/>} /> */}
+            <Route path="/createprofile"element={<NewProfileForm/>} />
+            {/* <Route path="*"element={<ErrorPage/>} /> */}
+          </Routes>
+        </Router>
+      </ThemeContext.Provider>
+
   )
 };
 
