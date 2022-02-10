@@ -1,6 +1,8 @@
 import Welcome from './Pages/Welcome';
 import NewProfileForm from './Pages/NewProfileForm';
 import PetProfile from './Pages/PetProfile';
+import YourPalsPage from "./Pages/YourPals";
+import FindPalsPage from "./Pages/FindPals";
 import ErrorPage from './Pages/ErrorPage';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
@@ -26,6 +28,8 @@ function App() {
       <Route path="/"element={<Welcome/>}/>
       <Route path="/createprofile/"element={<NewProfileForm/>} />
       <Route path="/profile/:login"element={<PetProfile/>} />
+      <Route path="/yourpals/"element={<YourPalsPage/>} />
+      <Route path="/findpals/"element={<FindPalsPage/>} />
       <Route path="*"element={<ErrorPage/>} />
     </Routes>
   </Router>

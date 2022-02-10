@@ -8,10 +8,10 @@ const NavSection = (props) => {
                     <button className="name"><Link to="/profile/:login">{props.pet}</Link></button>
                 </h1>
                 <h2>
-                    <button className="yourPals"><Link to="/profile/:yourpals">Your Pals</Link></button>
+                    <button className="yourPals"><Link to="/yourpals/">Your Pals</Link></button>
                 </h2>
                 <h2>
-                    <button className="findPals"><Link to="/profile/:findpals">Find Pals</Link></button>
+                    <button className="findPals"><Link to="/findpals/">Find Pals</Link></button>
                 </h2>
             </div>)
 }

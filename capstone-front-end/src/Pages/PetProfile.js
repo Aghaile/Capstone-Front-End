@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import BigSquare from '../Components/BigSquare';
+import YourProfile from '../Components/YourProfile';
 import NavSection from "../Components/NavSection"
 import "./PetProfile.css";
 
@@ -15,7 +15,7 @@ function PetProfile(){
             </div>
 
             <div class="float-child" id="mainPart">
-                <BigSquare />
+                <YourProfile />
             </div>
         </div>
             

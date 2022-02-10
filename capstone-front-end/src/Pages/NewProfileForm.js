@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import {Link} from "react-router-dom";
+// import UploadImage from "../Components/ImageUpload";
 // import { Multiselect } from 'multiselect-react-dropdown';
 
 const NewProfileForm = (props) => {
@@ -9,6 +10,7 @@ const NewProfileForm = (props) => {
   const [genderValue, genderInputProps] = useRadioButtons("gender");
   const [formFields, setFormFields] = useState({
     name: "",
+    // photo: <UploadImage />,
     zipcode: "",
     bio: "",
     age: "",

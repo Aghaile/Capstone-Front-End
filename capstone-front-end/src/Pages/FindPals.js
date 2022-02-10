@@ -1,11 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import NavSection from "../Components/NavSection"
-import YourPalsSection from "../Components/YourPalsSection";
-import "./YourPals.css";
+import FindPalsSection from "../Components/FindPalsSection";
+import "./FindPals.css";
 
 
-function YourPalsPage(){
+function FindPalsPage(){
     return (
         <div>
         <div class="float-container">
@@ -14,9 +14,9 @@ function YourPalsPage(){
                 <NavSection />
             </div>
 
-            <div class="float-child" id="mainPart">
-                <YourPalsSection />
-            </div>
+            {/* <div class="float-child" id="mainPart">
+                <FindPalsSection />
+            </div> */}
         </div>
             
         <div className="returnHomeButtonOnProfile">
@@ -26,6 +26,6 @@ function YourPalsPage(){
     )
 }
 
-export default YourPalsPage;
+export default FindPalsPage;
 
 

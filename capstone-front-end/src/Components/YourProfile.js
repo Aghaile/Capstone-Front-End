@@ -1,8 +1,8 @@
 import React from 'react';
-import "./BigSquare.css";
+import "./YourProfile.css";
 
 
-const BigSquare = () => {
+const YourProfile = () => {
     return <div className="bioStyling">
         <h3>Name: 
             Age:
@@ -13,4 +13,4 @@ const BigSquare = () => {
     </div>;
 }
 
-export default BigSquare;
+export default YourProfile;
