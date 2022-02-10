@@ -13,7 +13,7 @@ const Welcome = () => {
   const myContext = useContext(ThemeContext);
   let navigate = useNavigate();
 
-  const [loginField, setLoginField] = useState({id: 0});
+  const [loginField, setLoginField] = useState({id: "Enter your pet ID"});
   // const [errorMessage, setErrorMessage] = useState(false);
 
   const onIdChange = (event) => {
