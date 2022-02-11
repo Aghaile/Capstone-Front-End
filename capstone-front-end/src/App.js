@@ -2,9 +2,16 @@ import Welcome from './Pages/Welcome';
 import NewProfileForm from './Pages/NewProfileForm';
 import PetProfile from './Pages/PetProfile';
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import ThemeContext from './ThemeContext';
-import React, { useState } from "react";
+import YourPalsPage from "./Pages/YourPals";
+import FindPalsPage from "./Pages/FindPals";
+import ErrorPage from './Pages/ErrorPage';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import './App.css';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+// import AppContext from './components/AppContext';
+export default App;
 
 
 function App() {
@@ -29,14 +36,7 @@ function App() {
       </ThemeContext.Provider>
 
   )
-import YourPalsPage from "./Pages/YourPals";
-import FindPalsPage from "./Pages/FindPals";
-import ErrorPage from './Pages/ErrorPage';
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-import './App.css';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-// import AppContext from './components/AppContext';
+
 
 function App() {
 
@@ -65,7 +65,7 @@ function App() {
   );
 };
 
-export default App;
+
 
 // import React from "react";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

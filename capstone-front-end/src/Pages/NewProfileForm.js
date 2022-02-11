@@ -128,23 +128,8 @@ const NewProfileForm = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-<<<<<<< HEAD
     axios
       .post("http://127.0.0.1:5000/pet",{  
-=======
-    // props.addProfileCallback({
-    //   nameData: formFields.name,
-    //   zipcodeData: formFields.zipcode,
-    //   bioData: formFields.bio,
-    //   ageData: formFields.age,
-    //   genderData: formFields.gender,
-    //   speciesData:formFields.species,
-    //   phoneData: formFields.phone
-    // });
-
-    axios
-      .post("http://127.0.0.1:5000/pet", {
->>>>>>> adah
         name: formFields.name,
         zipcode: formFields.zipcode,
         bio: formFields.bio,
@@ -255,16 +240,10 @@ const NewProfileForm = () => {
   );
 };
 
-<<<<<<< HEAD
 NewProfileForm.propTypes = {
   // addProfileCallback: PropTypes.func.isRequired,
   addProfileCallback: PropTypes.func
 };
-=======
-// NewProfileForm.propTypes = {
-//   addProfileCallback: PropTypes.func,
-// };
->>>>>>> adah
 
 export default NewProfileForm;
 

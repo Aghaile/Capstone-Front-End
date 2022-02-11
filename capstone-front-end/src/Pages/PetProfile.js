@@ -1,13 +1,8 @@
 import axios from "axios";
 import React, { useContext , useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-<<<<<<< HEAD
 import BigSquare from '../Components/BigSquare';
 import { useLocation } from "react-router-dom";
-=======
-import YourProfile from '../Components/YourProfile';
-import NavSection from "../Components/NavSection"
->>>>>>> adah
 import "./PetProfile.css";
 import ThemeContext from "../ThemeContext";
 // import { UserContext } from "./UserContext";
@@ -84,47 +79,47 @@ const PetProfile=()=>{
     </div>
 
 
-  const onNameChange = (event) => {
+    const onNameChange = (event) => {
     setProfileFields({
-      ...profileFields,
-      name: event.target.value,
+        ...profileFields,
+        name: event.target.value,
     });
-  };
+    };
 
-  const onZipcodeChange = (event) => {
+    const onZipcodeChange = (event) => {
     setProfileFields({
-      ...profileFields,
-      zipcode: event.target.value,
+        ...profileFields,
+        zipcode: event.target.value,
     });
-  };
+    };
 
-  const onBioChange = (event) => {
+    const onBioChange = (event) => {
     setProfileFields({
-      ...profileFields,
-      bio: event.target.value,
+        ...profileFields,
+        bio: event.target.value,
     });
-  };
+    };
 
-  const onAgeChange = (event) => {
+    const onAgeChange = (event) => {
     setProfileFields({
-      ...profileFields,
-      age: event.target.value,
+        ...profileFields,
+        age: event.target.value,
     });
-  };
+    };
 
-  const onGenderChange = (event) => {
+    const onGenderChange = (event) => {
     setProfileFields({
-      ...profileFields,
-      gender: event.target.value,
+        ...profileFields,
+        gender: event.target.value,
     });
-  };
+    };
 
-  const onSpeciesChange = (event) => {
+    const onSpeciesChange = (event) => {
     setProfileFields({
-      ...profileFields,
-      species: event.target.value,
+        ...profileFields,
+        species: event.target.value,
     });
-  };
+    };
 
     const editProfileForm= () => {
         <form onSubmit={editProfileFormSubmit}>
@@ -226,7 +221,6 @@ const PetProfile=()=>{
 
     return (
         <div>
-<<<<<<< HEAD
         <div className="greeting">
             <BigSquare {...petInfo}/>
         </div>
@@ -236,17 +230,6 @@ const PetProfile=()=>{
         </div>
         <div className="manageProfileButtons">
             {profileButtons}
-=======
-        <div class="float-container">
-
-            <div class="float-child" id='navBar'>
-                <NavSection />
-            </div>
-
-            <div class="float-child" id="mainPart">
-                <YourProfile />
-            </div>
->>>>>>> adah
         </div>
             
         <div className="returnHomeButtonOnProfile">
