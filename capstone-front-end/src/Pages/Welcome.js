@@ -10,6 +10,7 @@ import axios from "axios";
 
 const Welcome = () => {
 
+<<<<<<< HEAD
 const myContext = useContext(ThemeContext);
 let navigate = useNavigate();
 
@@ -21,6 +22,29 @@ const onIdChange = (event) => {
     ...loginField,
     [event.target.name]: event.target.value,
     });
+=======
+    const [id, setId] = useState("");
+    const [pet, setCurrentPetName] = useState()
+
+    const greet = (event) => {
+        event.preventDefault();
+        const pet = {id};
+        const response = axios.get("http://127.0.0.1:5000/pet" + pet.id, pet); 
+        setCurrentPetName(response.data)
+        console.log(response.data)
+    };
+
+    return (
+        <div>
+            <h1>Welcome</h1>
+                <div>
+                    <SearchBar placeholder="Enter your pet login!"/> 
+                </div>
+                <button onClick={greet}><Link to="/profile/:login">Log In</Link></button>
+                <button><Link to="/createprofile">Create Profile</Link></button>
+            </div>
+    );
+>>>>>>> adah
 };
 
 const onLoginFormSubmit = (event) => {

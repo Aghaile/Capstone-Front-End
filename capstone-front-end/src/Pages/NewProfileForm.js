@@ -2,12 +2,14 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import {Link} from "react-router-dom";
+// import UploadImage from "../Components/ImageUpload";
 // import { Multiselect } from 'multiselect-react-dropdown';
 
 const NewProfileForm = () => {
   
   const [formFields, setFormFields] = useState({
     name: "",
+    // photo: <UploadImage />,
     zipcode: "",
     bio: "",
     age: "",
@@ -27,7 +29,7 @@ const NewProfileForm = () => {
       //     />
       // </fieldset>,
     species:"",
-    phone: "",
+    phone_number: "",
     nameValid: false,
     zipcodeValid: false,
     phoneNumberValid:false,
@@ -65,7 +67,7 @@ const NewProfileForm = () => {
     // const new_phone = event.target.value
     setFormFields({
       ...formFields,
-      phone: event.target.value,
+      phone_number: event.target.value,
       phoneNumberValid: phone_numberValid,
       submitDisabled: !submitValid,
     });
@@ -126,15 +128,30 @@ const NewProfileForm = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
+<<<<<<< HEAD
     axios
       .post("http://127.0.0.1:5000/pet",{  
+=======
+    // props.addProfileCallback({
+    //   nameData: formFields.name,
+    //   zipcodeData: formFields.zipcode,
+    //   bioData: formFields.bio,
+    //   ageData: formFields.age,
+    //   genderData: formFields.gender,
+    //   speciesData:formFields.species,
+    //   phoneData: formFields.phone
+    // });
+
+    axios
+      .post("http://127.0.0.1:5000/pet", {
+>>>>>>> adah
         name: formFields.name,
         zipcode: formFields.zipcode,
         bio: formFields.bio,
         age: formFields.age,
         gender: formFields.gender,
         species:formFields.species,
-        phone: formFields.phone
+        phone_number: formFields.phone_number
       })
 
       .then(function (response) {
@@ -238,10 +255,16 @@ const NewProfileForm = () => {
   );
 };
 
+<<<<<<< HEAD
 NewProfileForm.propTypes = {
   // addProfileCallback: PropTypes.func.isRequired,
   addProfileCallback: PropTypes.func
 };
+=======
+// NewProfileForm.propTypes = {
+//   addProfileCallback: PropTypes.func,
+// };
+>>>>>>> adah
 
 export default NewProfileForm;
 

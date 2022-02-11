@@ -1,8 +1,13 @@
 import axios from "axios";
 import React, { useContext , useState, useEffect} from "react";
 import {Link} from "react-router-dom";
+<<<<<<< HEAD
 import BigSquare from '../Components/BigSquare';
 import { useLocation } from "react-router-dom";
+=======
+import YourProfile from '../Components/YourProfile';
+import NavSection from "../Components/NavSection"
+>>>>>>> adah
 import "./PetProfile.css";
 import ThemeContext from "../ThemeContext";
 // import { UserContext } from "./UserContext";
@@ -221,6 +226,7 @@ const PetProfile=()=>{
 
     return (
         <div>
+<<<<<<< HEAD
         <div className="greeting">
             <BigSquare {...petInfo}/>
         </div>
@@ -230,7 +236,19 @@ const PetProfile=()=>{
         </div>
         <div className="manageProfileButtons">
             {profileButtons}
+=======
+        <div class="float-container">
+
+            <div class="float-child" id='navBar'>
+                <NavSection />
+            </div>
+
+            <div class="float-child" id="mainPart">
+                <YourProfile />
+            </div>
+>>>>>>> adah
         </div>
+            
         <div className="returnHomeButtonOnProfile">
             <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
         </div>
