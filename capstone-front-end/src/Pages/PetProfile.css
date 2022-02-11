@@ -5,24 +5,33 @@
 
 .float-child{
     display: flex;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    margin-left:20px;
-    margin-right:20px;
+    border-radius: 25px;
+    background: #72c4d8;
+    padding: 20px;
+    border: 2px;
+    height: 600px
 }
+
+#navBar{
+    width: 450px;
+    float: left;
+}
+
 #mainPart{
     width: 1215px;;
     float: right;
 }
 
 
-.returnHomeButtonOnProfile{
-    display: flex;
-    justify-content: center; 
-}
-
 .manageProfileButtons{
     display: flex;
     justify-content: center; 
     margin: 10px;
+}
+
+.returnHomeButtonOnProfile{
+    display: flex;
+    justify-content: center; 
+    position: absolute;
+    bottom: 5px;
 }
