@@ -124,6 +124,7 @@ const NewProfileForm = () => {
   
   //   return [value, inputProps];
   // }
+    console.log(formFields.name)
   
   const onFormSubmit = (event) => {
     event.preventDefault();

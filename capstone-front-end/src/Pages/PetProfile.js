@@ -5,6 +5,8 @@ import BigSquare from '../Components/BigSquare';
 import { useLocation } from "react-router-dom";
 import "./PetProfile.css";
 import ThemeContext from "../ThemeContext";
+import YourProfile from "../Components/YourProfile"
+import NavSection from "../Components/NavSection";
 // import { UserContext } from "./UserContext";
 
 // const msg = useContext(UserContext);
@@ -221,8 +223,19 @@ const PetProfile=()=>{
 
     return (
         <div>
+
         <div className="greeting">
-            <BigSquare {...petInfo}/>
+            <div class="float-container">
+
+            <div class="float-child" id='navBar'>
+                <NavSection />
+            </div>
+
+            <div class="float-child" id="mainPart">
+                <YourProfile {...petInfo}/>
+            </div>
+            </div>
+            {/* <BigSquare /> */}
         </div>
         <div>
             {profileInfo}
