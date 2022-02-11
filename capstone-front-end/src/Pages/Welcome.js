@@ -10,66 +10,66 @@ import axios from "axios";
 
 const Welcome = () => {
 
-  const myContext = useContext(ThemeContext);
-  let navigate = useNavigate();
+const myContext = useContext(ThemeContext);
+let navigate = useNavigate();
 
-  const [loginField, setLoginField] = useState({id: "Enter your pet ID"});
-  // const [errorMessage, setErrorMessage] = useState(false);
+const [loginField, setLoginField] = useState({id: "Enter your pet ID"});
+// const [errorMessage, setErrorMessage] = useState(false);
 
-  const onIdChange = (event) => {
+const onIdChange = (event) => {
     setLoginField({
-      ...loginField,
-      [event.target.name]: event.target.value,
+    ...loginField,
+    [event.target.name]: event.target.value,
     });
-  };
+};
 
-  const onLoginFormSubmit = (event) => {
+const onLoginFormSubmit = (event) => {
     event.preventDefault();
     // const currentId = document.getElementById("id");
     let validId = true;
 
     if (loginField.id.length === 0){
-      validId = false;
+    validId = false;
     }
 
     if (validId){
-      console.log(loginField);
-      const loginId = parseInt(loginField.id)
-      let profileEndpoint = "http://127.0.0.1:5000/pet" + "/" + loginId;
-      console.log(loginId);
-      axios
+    console.log(loginField);
+    const loginId = parseInt(loginField.id)
+    let profileEndpoint = "http://127.0.0.1:5000/pet" + "/" + loginId;
+    console.log(loginId);
+    axios
         .get(profileEndpoint)
         .then((response)=> {
-          myContext.setCurrentPet(response.data);
+        myContext.setCurrentPet(response.data);
             navigate('/profile');
             console.log("response data", response.data);
         })
         .catch((err)=>{
-          console.log(err);
+        console.log(err);
         }
         )
-      }
-  }
+    }
+}
 
-  const onCreateProfile = () => {
+const onCreateProfile = () => {
     navigate('/createprofile');
-  }
+}
 
-  return (
+return (
     <div>
-      <form>
+    <form>
         {/* <div className= "errorMessageContainer" value={errorMessage}><p>Valid pet ID required.</p></div> */}
         <input
-          id="id"
-          name="id"
-          minLength={1}
-          value={loginField.id}
-          onChange={onIdChange}
+        id="id"
+        name="id"
+        minLength={1}
+        value={loginField.id}
+        onChange={onIdChange}
         />
-      </form>
-      <button onClick={onLoginFormSubmit}>Login</button>
-      <button onClick={onCreateProfile}><Link to='/createprofile'>Create Profile</Link></button>
+    </form>
+    <button onClick={onLoginFormSubmit}>Login</button>
+    <button onClick={onCreateProfile}><Link to='/createprofile'>Create Profile</Link></button>
     </div>
-  )
+)
 }
 export default Welcome;
