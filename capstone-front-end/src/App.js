@@ -28,6 +28,8 @@ function App() {
           <Routes>
             <Route path="/welcome"element={<Welcome/>}/>
             <Route path={"/profile"}element={<PetProfile/>} />
+            <Route path="/yourpals/"element={<YourPalsPage/>} />
+            {/* <Route path="/findpals/"element={<FindPalsPage/>} /> */}
             {/* <Route path="/pet"element={<PetProfile/>} /> */}
             <Route path="/createprofile"element={<NewProfileForm/>} />
             {/* <Route path="*"element={<ErrorPage/>} /> */}
@@ -36,34 +38,6 @@ function App() {
       </ThemeContext.Provider>
 
   )
-
-
-function App() {
-
-  // const [activePet, setActivePet] = useState('Null');
-  // const userSettings = {
-  //   user: activePet,
-  //   setActivePet,
-  // };
-
-  return (
-    <div>
-    {/* <AppContext.Provider value={userSettings}>
-    </AppContext.Provider> */}
-  
-  <Router>
-    <Routes>
-      <Route path="/"element={<Welcome/>}/>
-      <Route path="/createprofile/"element={<NewProfileForm/>} />
-      <Route path="/profile/:login"element={<PetProfile/>} />
-      <Route path="/yourpals/"element={<YourPalsPage/>} />
-      <Route path="/findpals/"element={<FindPalsPage/>} />
-      <Route path="*"element={<ErrorPage/>} />
-    </Routes>
-  </Router>
-</div>
-  );
-};
 
 
 

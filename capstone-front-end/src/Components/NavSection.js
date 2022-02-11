@@ -2,6 +2,7 @@ import React from 'react';
 import "./NavSection.css";
 import {Link} from "react-router-dom";
 
+
 const NavSection = (props) => {
     return (<div className="navBar">
                 <h1>Hi,
