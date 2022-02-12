@@ -22,14 +22,21 @@ function App() {
   };
   console.log(currentPet);
 
+  // const [currentPalRec, setCurrentPalRec] = useState({})
+  // const palSettings = {
+  //   palVariable = currentPalRec,
+  //   setCurrentPalRec,
+  // };
+  // console.log(currentPalRec)
+
   return (
     <ThemeContext.Provider value = {petSettings}>
         <Router>
           <Routes>
             <Route path="/welcome"element={<Welcome/>}/>
             <Route path={"/profile"}element={<PetProfile/>} />
-            <Route path="/yourpals/"element={<YourPalsPage/>} />
-            <Route path="/findpals/"element={<FindPalsPage/>} />
+            <Route path="/yourpals"element={<YourPalsPage/>} />
+            <Route path="/findpals"element={<FindPalsPage/>} />
             {/* <Route path="/pet"element={<PetProfile/>} /> */}
             <Route path="/createprofile"element={<NewProfileForm/>} />
             {/* <Route path="*"element={<ErrorPage/>} /> */}

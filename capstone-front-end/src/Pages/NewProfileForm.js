@@ -29,7 +29,7 @@ const NewProfileForm = () => {
       //     />
       // </fieldset>,
     species:"",
-    phone_number: "",
+    phone: "",
     nameValid: false,
     zipcodeValid: false,
     phoneNumberValid:false,
@@ -61,14 +61,14 @@ const NewProfileForm = () => {
   };
 
   const onPhoneNumberChange = (event) => {
-    let phone_numberValid = event.target.value ? true : false;
+    let phoneNumberValid = event.target.value ? true : false;
     // let new_phone_number = event.target.value.length > this.maxLength ? this.value : this.value.slice(0, this.maxLength)
     let submitValid = formFields.nameValid && formFields.phoneNumberValid && formFields.zipcodeValid;
     // const new_phone = event.target.value
     setFormFields({
       ...formFields,
-      phone_number: event.target.value,
-      phoneNumberValid: phone_numberValid,
+      phone: event.target.value,
+      phoneNumberValid: phoneNumberValid,
       submitDisabled: !submitValid,
     });
 
