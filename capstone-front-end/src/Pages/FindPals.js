@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import NavSection from "../Components/NavSection"
-import FindPalsSection from "../Components/FindPalsSection";
+import FindPals from "../Components/FindPalsSection";
 import "./FindPals.css";
 
 
@@ -14,9 +14,9 @@ function FindPalsPage(){
                 <NavSection />
             </div>
 
-            {/* <div class="float-child" id="mainPart">
-                <FindPalsSection />
-            </div> */}
+            <div class="float-child" id="mainPart">
+                <FindPals />
+            </div>
         </div>
             
         <div className="returnHomeButtonOnProfile">

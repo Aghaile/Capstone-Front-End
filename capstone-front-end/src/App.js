@@ -29,7 +29,7 @@ function App() {
             <Route path="/welcome"element={<Welcome/>}/>
             <Route path={"/profile"}element={<PetProfile/>} />
             <Route path="/yourpals/"element={<YourPalsPage/>} />
-            {/* <Route path="/findpals/"element={<FindPalsPage/>} /> */}
+            <Route path="/findpals/"element={<FindPalsPage/>} />
             {/* <Route path="/pet"element={<PetProfile/>} /> */}
             <Route path="/createprofile"element={<NewProfileForm/>} />
             {/* <Route path="*"element={<ErrorPage/>} /> */}
