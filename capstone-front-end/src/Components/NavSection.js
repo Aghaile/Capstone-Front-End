@@ -1,14 +1,13 @@
 import "./NavSection.css";
 import axios from "axios";
-import React, { useContext , useState, useEffect} from "react";
+import React, { useContext , useState} from "react";
 import ThemeContext from "../ThemeContext";
 
-const NavSection = (props, { variant }) => {
+const NavSection = ({ variant }) => {
 
     const myContext = useContext(ThemeContext);
     const petName = myContext.petVariable.name;
     const petId = myContext.petVariable.id; 
-    const [pals, setPals] = useState(props.pals);
     const [palComponents, setPalComponents] = useState([]);
     const [searchedForPals, setSearchedForPals] = useState(variant ? false : true);
 
@@ -16,7 +15,6 @@ const NavSection = (props, { variant }) => {
         axios
             .get(`${process.env.REACT_APP_BACKEND_URL}/pet/${petId}/findpals`)
             .then((response)=>{
-                setPals(response.data);
                 setPalComponents(response.data);
                 setSearchedForPals(true);
             }, [palComponents])
