@@ -1,21 +1,18 @@
 import "./YourProfile.css";
 import axios from "axios";
+import NavSection from "./NavSection";
 import React, { useContext , useState, useEffect} from "react";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ThemeContext from "../ThemeContext";
-
 
 const YourProfile = () => {
 
     const myContext = useContext(ThemeContext);
     const petId = myContext.petVariable.id;
     const [petInfo, setPetInfo] = useState({});
-    // const navigate = useNavigate();
     const location = useLocation();
-    // const id   = location.state; 
     const [petSelf, setPetSelf] = useState(false);
-    // const [showError, setShowError] = useState(false);
     const [editProfile, setEditProfile] = useState(false);
     const [deleteProfile, setDeleteProfile] = useState(false);
     const [profileExists, setProfileExists] = useState(true);
@@ -26,12 +23,12 @@ const YourProfile = () => {
         gender: petInfo.gender,
         species: petInfo.species,
         zipcode: petInfo.zipcode,
-        phone: petInfo.phonea
+        phone: petInfo.phone
     });
 
-    // console.log(id)
     console.log("location", location)
     console.log("petId", petId)
+
     useEffect(()=>{
         axios
             // .get(`${process.env.REACT_APP_BACKEND_URL}/pet/${id}`)
@@ -47,6 +44,8 @@ const YourProfile = () => {
             });
     }, [petId])
 
+    console.log(petId)
+
     const deleteProfileSubmit = () => {
         axios
             .delete(`${process.env.REACT_APP_BACKEND_URL}/pet/${petId}`)
@@ -59,7 +58,6 @@ const YourProfile = () => {
                 console.log(err)
             })
         }
-
 
     const profileInfo=
     <div>
@@ -74,7 +72,6 @@ const YourProfile = () => {
     </div> : <p></p>
     }
     </div>
-
 
     const onNameChange = (event) => {
     setProfileFields({
@@ -208,7 +205,6 @@ const YourProfile = () => {
         });
     }
 
-
     const profileButtons=
     <div>
         {petSelf ? <button onClick={editProfileForm}>Edit Profile</button> : <p></p>}
@@ -225,7 +221,7 @@ const YourProfile = () => {
         <div className="manageProfileButtons">
             {profileButtons}
         </div>
-        
+        <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
     </div>)
 }
 export default YourProfile;
