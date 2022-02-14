@@ -29,7 +29,7 @@ const NewProfileForm = () => {
       //     />
       // </fieldset>,
     species:"",
-    phone: "",
+    // phone: "",
     nameValid: false,
     zipcodeValid: false,
     phoneNumberValid:false,
@@ -38,7 +38,7 @@ const NewProfileForm = () => {
 
   const onNameChange = (event) => {
     let nameValid = event.target.value ? true : false;
-    let submitValid = formFields.zipcodeValid && formFields.nameValid && formFields.phoneNumberValid;
+    let submitValid = formFields.zipcodeValid && formFields.nameValid;
 
     setFormFields({
       ...formFields,
@@ -50,7 +50,7 @@ const NewProfileForm = () => {
 
   const onZipcodeChange = (event) => {
     let zipcodeValid = event.target.value ? true : false;
-    let submitValid = formFields.nameValid && formFields.zipcodeValid && formFields.phoneNumberValid;
+    let submitValid = formFields.nameValid && formFields.zipcodeValid;
 
     setFormFields({
       ...formFields,
@@ -60,17 +60,17 @@ const NewProfileForm = () => {
     });
   };
 
-  const onPhoneNumberChange = (event) => {
-    let phoneNumberValid = event.target.value ? true : false;
-    // let new_phone_number = event.target.value.length > this.maxLength ? this.value : this.value.slice(0, this.maxLength)
-    let submitValid = formFields.nameValid && formFields.phoneNumberValid && formFields.zipcodeValid;
-    // const new_phone = event.target.value
-    setFormFields({
-      ...formFields,
-      phone: event.target.value,
-      phoneNumberValid: phoneNumberValid,
-      submitDisabled: !submitValid,
-    });
+  // const onPhoneNumberChange = (event) => {
+  //   let phoneNumberValid = event.target.value ? true : false;
+  //   // let new_phone_number = event.target.value.length > this.maxLength ? this.value : this.value.slice(0, this.maxLength)
+  //   let submitValid = formFields.nameValid && formFields.zipcodeValid;
+  //   // const new_phone = event.target.value
+  //   setFormFields({
+  //     ...formFields,
+  //     phone: event.target.value,
+  //     phoneNumberValid: phoneNumberValid,
+  //     submitDisabled: !submitValid,
+  //   });
 
     // return (
     //   <div>
@@ -79,7 +79,7 @@ const NewProfileForm = () => {
     //     } 
     //   </div>
     // )
-  };
+  
 
   const onBioChange = (event) => {
     setFormFields({
@@ -137,7 +137,6 @@ const NewProfileForm = () => {
         age: formFields.age,
         gender: formFields.gender,
         species:formFields.species,
-        phone_number: formFields.phone_number
       })
 
       .then(function (response) {
@@ -150,7 +149,6 @@ const NewProfileForm = () => {
           ageData: "",
           genderData: "",
           speciesData:"",
-          phoneData: "",
           submitDisabled: true,
         });      
       })
@@ -221,7 +219,7 @@ const NewProfileForm = () => {
             onChange={onSpeciesChange}
             /> 
           </p>
-          <p>
+          {/* <p>
             Phone Number:
             <input 
             name="phoneNum"
@@ -229,7 +227,7 @@ const NewProfileForm = () => {
             value={formFields.phone}
             onChange={onPhoneNumberChange}
             />
-          </p>
+          </p> */}
           <input
             disabled={formFields.submitDisabled}
             type="submit"
@@ -239,7 +237,7 @@ const NewProfileForm = () => {
     <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
   </div>
   );
-};
+  }
 
 NewProfileForm.propTypes = {
   // addProfileCallback: PropTypes.func.isRequired,

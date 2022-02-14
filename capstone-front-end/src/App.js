@@ -1,11 +1,10 @@
 import Welcome from './Pages/Welcome';
 import NewProfileForm from './Pages/NewProfileForm';
-import PetProfile from './Pages/PetProfile';
+import YourProfile from './Components/YourProfile';
 import './App.css';
 import ThemeContext from './ThemeContext';
-import YourPalsPage from "./Pages/YourPals";
-import FindPalsPage from "./Pages/FindPals";
-import ErrorPage from './Pages/ErrorPage';
+// import YourPalsPage from "./Pages/YourPals";
+// import FindPalsPage from "./Pages/FindPals";
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
@@ -34,12 +33,11 @@ function App() {
         <Router>
           <Routes>
             <Route path="/welcome"element={<Welcome/>}/>
-            <Route path={"/profile"}element={<PetProfile/>} />
-            <Route path="/yourpals"element={<YourPalsPage/>} />
-            <Route path="/findpals"element={<FindPalsPage/>} />
+            <Route path={"/profile"}element={<YourProfile/>} />
+            {/* <Route path="/yourpals"element={<YourPalsPage/>} />
+            <Route path="/findpals"element={<FindPalsPage/>} /> */}
             {/* <Route path="/pet"element={<PetProfile/>} /> */}
             <Route path="/createprofile"element={<NewProfileForm/>} />
-            {/* <Route path="*"element={<ErrorPage/>} /> */}
           </Routes>
         </Router>
       </ThemeContext.Provider>

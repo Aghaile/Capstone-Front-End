@@ -1,5 +1,6 @@
 import "./YourProfile.css";
 import axios from "axios";
+import NavSection from "./NavSection";
 import React, { useContext , useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -16,7 +17,7 @@ const YourProfile = () => {
     // const id   = location.state; 
     const [petSelf, setPetSelf] = useState(false);
     // const [showError, setShowError] = useState(false);
-    const [palInfo, setPalInfo] = useState(petId+1);
+    // const [palInfo, setPalInfo] = useState(petId+1);
     const [editProfile, setEditProfile] = useState(false);
     const [deleteProfile, setDeleteProfile] = useState(false);
     const [profileExists, setProfileExists] = useState(true);
@@ -33,7 +34,7 @@ const YourProfile = () => {
     // console.log(id)
     console.log("location", location)
     console.log("petId", petId)
-    console.log("palInfo", palInfo)
+    // console.log("palInfo", palInfo)
 
     useEffect(()=>{
         axios
@@ -213,47 +214,49 @@ const YourProfile = () => {
         });
     }
 
-    const getPalRecs=()=> {
-        axios
-            // .get(`${process.env.REACT_APP_BACKEND_URL}/pet/${id}`)
-            .get("http://127.0.0.1:5000/pet" + "/" + petId + "/findpals")
-            .then((response)=> {
-                setPalInfo(response.data);
-            })
-            .catch((err)=>{
-                console.log(err)
-            });
-    }
+    // const getPalRecs=()=> {
+    //     axios
+    //         // .get(`${process.env.REACT_APP_BACKEND_URL}/pet/${id}`)
+    //         .get("http://127.0.0.1:5000/pet" + "/" + petId + "/findpals")
+    //         .then((response)=> {
+    //             setPalInfo(response.data);
+    //         })
+    //         .catch((err)=>{
+    //             console.log(err)
+    //         });
+    // }
 
-    const palRecProfile=
-    <div>
-        <p>Name: {palInfo.name}</p>
-        {palInfo.bio ? <p>Bio: {palInfo.bio}</p> : <p></p>}
-        {palInfo.age ? <p>Age: {palInfo.age}</p> : <p></p>}
-        {palInfo.gender ? <p>Gender: {palInfo.gender}</p> : <p></p>}
-        {palInfo.species ? <p>Species: {palInfo.species}</p> : <p></p>}
-        <p>Zipcode: {palInfo.zipcode}</p>
-    </div>
+    // const palRecProfile=
+    // <div>
+    //     <p>Name: {palInfo.name}</p>
+    //     {palInfo.bio ? <p>Bio: {palInfo.bio}</p> : <p></p>}
+    //     {palInfo.age ? <p>Age: {palInfo.age}</p> : <p></p>}
+    //     {palInfo.gender ? <p>Gender: {palInfo.gender}</p> : <p></p>}
+    //     {palInfo.species ? <p>Species: {palInfo.species}</p> : <p></p>}
+    //     <p>Zipcode: {palInfo.zipcode}</p>
+    // </div>
 
     const profileButtons=
     <div>
         {petSelf ? <button onClick={editProfileForm}>Edit Profile</button> : <p></p>}
         {petSelf ? <button onClick={deleteProfileSubmit}>Delete Profile</button> : <p></p>}
-        {petSelf ? <button onClick={getPalRecs}>Find Pals</button> : <p></p>}
+        {/* {petSelf ? <button onClick={getPalRecs}>Find Pals</button> : <p></p>} */}
 
     </div>;
 
     return(
         <div>
+            <NavSection/>
         {profileInfo}
         {petSelf ? <p>{editProfileForm}</p> : <p></p>}
 
         <div className="manageProfileButtons">
         {profileButtons}
         </div>
-        <div>
+        {/* <div>
             {palRecProfile}
-        </div>
+        </div> */}
+        <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
     </div>)
 }
 export default YourProfile;
