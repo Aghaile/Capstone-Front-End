@@ -1,7 +1,7 @@
 import "./YourProfile.css";
 import axios from "axios";
 import React, { useContext , useState, useEffect} from "react";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ThemeContext from "../ThemeContext";
 
@@ -216,12 +216,14 @@ const YourProfile = () => {
     </div>;
 
 
-    return(<div>    
-        {profileInfo}
-        {petSelf ? <p>{editProfileForm}</p> : <p></p>}
+    return(<div>  
+        <div className="profileInfo">
+            {profileInfo}
+            {petSelf ? <p>{editProfileForm}</p> : <p></p>}
+        </div>
 
         <div className="manageProfileButtons">
-        {profileButtons}
+            {profileButtons}
         </div>
         
     </div>)
