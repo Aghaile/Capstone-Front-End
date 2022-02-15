@@ -4,14 +4,6 @@ import React, { useContext , useEffect, useState} from "react";
 // import {Link} from "react-router-dom";
 // import { useLocation } from "react-router-dom";
 import ThemeContext from "../ThemeContext";
-<<<<<<< HEAD
-
-const FindPalsSection=({variant})=>{
-    const myContext = useContext(ThemeContext);
-            const petId = myContext.petVariable.id; 
-            const [palComponents, setPalComponents] = useState([]);
-            const [searchedForPals, setSearchedForPals] = useState(variant ? false : true);
-=======
 import Footer from "./Footer";
 import NavSection from "./NavSection";
 import Pounce from "./Pounce";
@@ -27,7 +19,6 @@ const FindPalsSection=({variant})=>{
     let navigate = useNavigate();
 
 
->>>>>>> ro
     useEffect(()=>{
         axios
             .get(`${process.env.REACT_APP_BACKEND_URL}/pet/${petId}/findpals`)
@@ -41,23 +32,6 @@ const FindPalsSection=({variant})=>{
                 // setPalComponents(palComponents);
     }, [palComponents, petId])
 
-<<<<<<< HEAD
-        
-            
-
-        return(<div>
-            {palComponents.map((pal)=>(
-                <div className="palsList">
-                    <p>{pal.name}</p>
-                    <p>{pal.bio}</p>
-                    <p>{pal.age}</p> 
-                    <p>{pal.gender}</p> 
-                    <p>{pal.species}</p>
-                    <p>{pal.zipcode}</p>
-                </div>
-            ))}
-        </div>)}
-=======
     // const pounce =()=>{
     //     axios
     //         .get(`${process.env.REACT_APP_BACKEND_URL}/pet/${petId}/findpals`)
@@ -84,5 +58,4 @@ const FindPalsSection=({variant})=>{
             <Footer/>
         </div>)
 }
->>>>>>> ro
     export default FindPalsSection;

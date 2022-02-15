@@ -3,21 +3,10 @@ import NewProfileForm from './Pages/NewProfileForm';
 import YourProfile from './Components/YourProfile';
 import './App.css';
 import ThemeContext from './ThemeContext';
-<<<<<<< HEAD
-import YourPalsPage from "./Pages/YourPals";
-import FindPalsPage from "./Pages/FindPalsPage";
-import ErrorPage from './Pages/ErrorPage';
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-// import AppContext from './components/AppContext';
-export default App;
-=======
 import React, { useState } from "react";
 import ErrorPage from './Pages/ErrorPage';
 import FindPalsSection from './Components/FindPalsSection';
->>>>>>> ro
 
 
 function App() {
@@ -33,15 +22,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/welcome"element={<Welcome/>}/>
-<<<<<<< HEAD
-            <Route path={"/profile"}element={<PetProfile/>} />
-            <Route path="/yourpals/"element={<YourPalsPage/>} />
-            <Route path="/findpals"element={<FindPalsPage/>} />
-            {/* <Route path="/pet"element={<PetProfile/>} /> */}
-=======
             <Route path={"/profile"}element={<YourProfile/>} />
             <Route path="/findpals"element={<FindPalsSection/>} />
->>>>>>> ro
             <Route path="/createprofile"element={<NewProfileForm/>} />
             <Route path="*"element={<ErrorPage/>} />
           </Routes>

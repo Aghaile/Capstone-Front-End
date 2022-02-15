@@ -1,42 +1,3 @@
-<<<<<<< HEAD
-.float-container {
-    border: 3px solid #fff;
-    padding: 20px;
-}
-
-.float-child{
-    display: flex;
-    border-radius: 25px;
-    background: #72c4d8;
-    padding: 20px;
-    border: 2px;
-    height: 600px
-}
-
-#navBar{
-    width: 450px;
-    float: left;
-}
-
-#mainPart{
-    width: 1215px;;
-    float: right;
-}
-
-
-/* .manageProfileButtons{
-    display: flex;
-    justify-content: center; 
-    margin: 10px;
-} */
-
-.returnHomeButtonOnProfile{
-    display: flex;
-    justify-content: center; 
-    position: absolute;
-    bottom: 5px;
-}
-=======
 /* .float-container {
     border: 3px solid #fff;
     padding: 20px;
@@ -72,4 +33,3 @@
     position: absolute;
     bottom: 5px;
 }
->>>>>>> ro

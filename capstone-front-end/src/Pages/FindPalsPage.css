@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-.float-container {
-    border: 3px solid #fff;
-    padding: 20px;
-}
-
-.float-child{
-=======
 /* .float-container {
     border: 3px solid #fff;
     padding: 20px;
 } */
 
 /* .float-child{
->>>>>>> ro
     display: flex;
     border-radius: 25px;
     background: #72c4d8;
@@ -22,16 +13,6 @@
 }
 
 #navBar{
-<<<<<<< HEAD
-    width: 450px;
-    float: left;
-}
-
-#mainPart{
-    width: 1215px;;
-    float: right;
-}
-=======
     width: 400px;
     float: left;
 } */
@@ -40,7 +21,6 @@
     margin: 10px;
     float: right;
 } */
->>>>>>> ro
 
 
 /* .manageProfileButtons{
@@ -49,17 +29,9 @@
     margin: 10px;
 } */
 
-<<<<<<< HEAD
-.returnHomeButtonOnProfile{
-=======
 /* .returnHomeButtonOnProfile{
->>>>>>> ro
     display: flex;
     justify-content: center; 
     position: absolute;
     bottom: 5px;
-<<<<<<< HEAD
-}
-=======
 } */
->>>>>>> ro

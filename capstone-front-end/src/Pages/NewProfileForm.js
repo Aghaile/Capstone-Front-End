@@ -2,11 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import {Link} from "react-router-dom";
-<<<<<<< HEAD
-// import UploadImage from "../Components/ImageUpload";
-=======
 import "./NewProfileForm.css";
->>>>>>> ro
 // import { Multiselect } from 'multiselect-react-dropdown';
 
 const NewProfileForm = () => {
