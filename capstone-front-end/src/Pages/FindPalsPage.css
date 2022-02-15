@@ -1,7 +1,7 @@
 /* .float-container {
     border: 3px solid #fff;
     padding: 20px;
-} */ 
+} */
 
 /* .float-child{
     display: flex;
@@ -10,21 +10,23 @@
     padding: 20px;
     border: 2px;
     height: 600px
-} */
-/* 
+}
+
 #navBar{
     width: 400px;
     float: left;
 } */
 
 /* #mainPart{
-    width: 600px;;
+    margin: 10px;
     float: right;
 } */
 
-/* .returnHomeButtonOnProfile{
+
+/* .manageProfileButtons{
     display: flex;
     justify-content: center; 
+    margin: 10px;
 } */
 
 /* .returnHomeButtonOnProfile{
@@ -32,4 +34,4 @@
     justify-content: center; 
     position: absolute;
     bottom: 5px;
-}
+} */

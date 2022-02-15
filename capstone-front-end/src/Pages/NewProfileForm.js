@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import "./NewProfileForm.css";
 // import { Multiselect } from 'multiselect-react-dropdown';
 
 const NewProfileForm = () => {
@@ -159,9 +160,10 @@ const NewProfileForm = () => {
 
 
   return (
-    <div className="text-center">
+    <div className="createProfile">
+    <div style={{textAlign:"center", position: "absolute", transform:"translate(0, 50%)", marginLeft:600}}>
       <h2>Create Profile</h2>
-        <form 
+        <form style={{ border:"solid blue",padding:10, zIndex:2, opacity:1, backgroundColor: "silver", border:"solid rgba(99,172,190)"}}
     
         onSubmit={onFormSubmit}>
           <p className="">
@@ -233,7 +235,8 @@ const NewProfileForm = () => {
             value="submit"
           />
         </form>
-    <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
+    <button style={{margin:10}}><Link to="/welcome">Return Home</Link></button>
+  </div>
   </div>
   );
 };
