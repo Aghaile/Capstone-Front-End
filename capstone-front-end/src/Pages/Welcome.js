@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 import ThemeContext from "../ThemeContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Welcome.css";
+// import Title from "../Components/Title";
 // import PetProfile from "./PetProfile";
 // import {BrowserRouter as Routes} from "react-router-dom";
 
@@ -56,19 +58,22 @@ const Welcome = () => {
   }
 
   return (
-    <div>
-      <form>
-        {/* <div className= "errorMessageContainer" value={errorMessage}><p>Valid pet ID required.</p></div> */}
-        <input
-          id="id"
-          name="id"
-          minLength={1}
-          value={loginField.id}
-          onChange={onIdChange}
-        />
-      </form>
-      <button onClick={onLoginFormSubmit}>Login</button>
-      <button onClick={onCreateProfile}><Link to='/createprofile'>Create Profile</Link></button>
+    <div className="welcomeBackground">
+      {/* <Title className="titleBox"/> */}
+        <div className="welcomeBox" style={{position:"absolute",top:"40%",transform:"translate(0, 50%)",marginLeft:600}}><h1>Paw Pals</h1>
+        <form>
+            {/* <div className= "errorMessageContainer" value={errorMessage}><p>Valid pet ID required.</p></div> */}
+            <input
+            id="id"
+            name="id"
+            minLength={1}
+            value={loginField.id}
+            onChange={onIdChange}
+            />
+        </form>
+        <button onClick={onLoginFormSubmit}>Login</button>
+        <button onClick={onCreateProfile}><Link to='/createprofile'>Create Profile</Link></button>
+        </div>
     </div>
   )
 }

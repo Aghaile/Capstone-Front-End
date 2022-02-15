@@ -1,10 +1,12 @@
 import Welcome from './Pages/Welcome';
 import NewProfileForm from './Pages/NewProfileForm';
-import PetProfile from './Pages/PetProfile';
+import YourProfile from './Components/YourProfile';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import ThemeContext from './ThemeContext';
 import React, { useState } from "react";
+import ErrorPage from './Pages/ErrorPage';
+import FindPalsSection from './Components/FindPalsSection';
 
 
 function App() {
@@ -20,10 +22,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/welcome"element={<Welcome/>}/>
-            <Route path={"/profile"}element={<PetProfile/>} />
-            {/* <Route path="/pet"element={<PetProfile/>} /> */}
+            <Route path={"/profile"}element={<YourProfile/>} />
+            <Route path="/findpals"element={<FindPalsSection/>} />
             <Route path="/createprofile"element={<NewProfileForm/>} />
-            {/* <Route path="*"element={<ErrorPage/>} /> */}
+            <Route path="*"element={<ErrorPage/>} />
           </Routes>
         </Router>
       </ThemeContext.Provider>

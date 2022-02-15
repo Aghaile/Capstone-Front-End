@@ -1,24 +1,18 @@
+// import "./YourProfile.css";
 // import axios from "axios";
+// import NavSection from "../Components/NavSection";
 // import React, { useContext , useState, useEffect} from "react";
 // import {Link} from "react-router-dom";
-// import BigSquare from '../Components/BigSquare';
 // import { useLocation } from "react-router-dom";
-// import "./PetProfile.css";
 // import ThemeContext from "../ThemeContext";
-// // import { UserContext } from "./UserContext";
 
-// // const msg = useContext(UserContext);
+// const YourProfile = () => {
 
-// const PetProfile=()=>{
-    
 //     const myContext = useContext(ThemeContext);
 //     const petId = myContext.petVariable.id;
 //     const [petInfo, setPetInfo] = useState({});
-//     // const navigate = useNavigate();
 //     const location = useLocation();
-//     // const id   = location.state; 
 //     const [petSelf, setPetSelf] = useState(false);
-//     // const [showError, setShowError] = useState(false);
 //     const [editProfile, setEditProfile] = useState(false);
 //     const [deleteProfile, setDeleteProfile] = useState(false);
 //     const [profileExists, setProfileExists] = useState(true);
@@ -29,12 +23,12 @@
 //         gender: petInfo.gender,
 //         species: petInfo.species,
 //         zipcode: petInfo.zipcode,
-//         phone: petInfo.phonea
+//         phone: petInfo.phone
 //     });
 
-//     // console.log(id)
 //     console.log("location", location)
 //     console.log("petId", petId)
+
 //     useEffect(()=>{
 //         axios
 //             // .get(`${process.env.REACT_APP_BACKEND_URL}/pet/${id}`)
@@ -50,6 +44,8 @@
 //             });
 //     }, [petId])
 
+//     console.log(petId)
+
 //     const deleteProfileSubmit = () => {
 //         axios
 //             .delete(`${process.env.REACT_APP_BACKEND_URL}/pet/${petId}`)
@@ -62,7 +58,6 @@
 //                 console.log(err)
 //             })
 //         }
-
 
 //     const profileInfo=
 //     <div>
@@ -78,49 +73,47 @@
 //     }
 //     </div>
 
-// <<<<<<< Updated upstream
-
-//   const onNameChange = (event) => {
+//     const onNameChange = (event) => {
 //     setProfileFields({
-//       ...profileFields,
-//       name: event.target.value,
+//         ...profileFields,
+//         name: event.target.value,
 //     });
-//   };
+//     };
 
-//   const onZipcodeChange = (event) => {
+//     const onZipcodeChange = (event) => {
 //     setProfileFields({
-//       ...profileFields,
-//       zipcode: event.target.value,
+//         ...profileFields,
+//         zipcode: event.target.value,
 //     });
-//   };
+//     };
 
-//   const onBioChange = (event) => {
+//     const onBioChange = (event) => {
 //     setProfileFields({
-//       ...profileFields,
-//       bio: event.target.value,
+//         ...profileFields,
+//         bio: event.target.value,
 //     });
-//   };
+//     };
 
-//   const onAgeChange = (event) => {
+//     const onAgeChange = (event) => {
 //     setProfileFields({
-//       ...profileFields,
-//       age: event.target.value,
+//         ...profileFields,
+//         age: event.target.value,
 //     });
-//   };
+//     };
 
-//   const onGenderChange = (event) => {
+//     const onGenderChange = (event) => {
 //     setProfileFields({
-//       ...profileFields,
-//       gender: event.target.value,
+//         ...profileFields,
+//         gender: event.target.value,
 //     });
-//   };
+//     };
 
-//   const onSpeciesChange = (event) => {
+//     const onSpeciesChange = (event) => {
 //     setProfileFields({
-//       ...profileFields,
-//       species: event.target.value,
+//         ...profileFields,
+//         species: event.target.value,
 //     });
-//   };
+//     };
 
 //     const editProfileForm= () => {
 //         <form onSubmit={editProfileFormSubmit}>
@@ -212,41 +205,26 @@
 //         });
 //     }
 
-
 //     const profileButtons=
 //     <div>
 //         {petSelf ? <button onClick={editProfileForm}>Edit Profile</button> : <p></p>}
 //         {petSelf ? <button onClick={deleteProfileSubmit}>Delete Profile</button> : <p></p>}
+//     </div>;
+
+//     return(
+//         <div className="yourProfilePage">
+//             <NavSection/>
+//             <div style={{ marginTop: 50, borderRadius: 25, width: 200, height: 250}}>
+//                 {profileInfo} 
+//                 {petSelf ? <p>{editProfileForm}</p> : <p></p>}
+//             {/* </div>
+
+//         <div className="manageProfileButtons"> */}
+//         {profileButtons}
+//         {/* </div> */}
+//         {/* <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button> */}
 //     </div>
-
-
-//     return (
-//         <div>
-//         <div className="greeting">
-//             <BigSquare {...petInfo}/>
-//         </div>
-//         <div>
-//             {profileInfo}
-//             {petSelf ? <p>{editProfileForm}</p> : <p></p>}
-//         </div>
-//         <div className="manageProfileButtons">
-//             {profileButtons}
-//         </div>
-//         <div className="returnHomeButtonOnProfile">
-//             <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
-//         </div>
-// =======
-//     return (
-//         <div>
-//             <YourProfile />
-// >>>>>>> Stashed changes
-//         </div>
+//     </div>
 //     )
 // }
-
-// export default PetProfile;
-
-
-
-
-
+// export default YourProfile;

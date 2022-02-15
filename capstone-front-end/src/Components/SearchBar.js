@@ -1,7 +1,7 @@
-// import React, {useState} from "react";
+// import React from "react";
 // import "./SearchBar.css";
 
-// function SearchBar({placeholder, data}){
+// const SearchBar=()=>{
 
 //     const [filteredData, setFilteredData] = useState([]);
 
@@ -38,3 +38,17 @@
 
 // to do: link href on line 13 to the profile. Maybe generate a URL for each new member 
 // and include their URL in the dict that gets returned when someone signs up
+
+
+//     return ( 
+//         <div>
+//             <button onClick={onLoginFormSubmit}>Login</button>
+//             <button onClick={onCreateProfile}><Link to='/createprofile'>Create Profile</Link></button>
+//         </div>
+//     )
+// }
+
+// export default SearchBar;
+
+
+
