@@ -4,7 +4,7 @@ import PetProfile from './Pages/PetProfile';
 import './App.css';
 import ThemeContext from './ThemeContext';
 import YourPalsPage from "./Pages/YourPals";
-import FindPalsPage from "./Pages/FindPals";
+import FindPalsPage from "./Pages/FindPalsPage";
 import ErrorPage from './Pages/ErrorPage';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
@@ -29,7 +29,7 @@ function App() {
             <Route path="/welcome"element={<Welcome/>}/>
             <Route path={"/profile"}element={<PetProfile/>} />
             <Route path="/yourpals/"element={<YourPalsPage/>} />
-            <Route path="/findpals/"element={<FindPalsPage/>} />
+            <Route path="/findpals"element={<FindPalsPage/>} />
             {/* <Route path="/pet"element={<PetProfile/>} /> */}
             <Route path="/createprofile"element={<NewProfileForm/>} />
             {/* <Route path="*"element={<ErrorPage/>} /> */}

@@ -1,28 +1,12 @@
 import "./NavSection.css";
-import axios from "axios";
-import React, { useContext , useState} from "react";
+import React, { useContext} from "react";
 import ThemeContext from "../ThemeContext";
+import {Link} from "react-router-dom";
 
 const NavSection = ({ variant }) => {
 
     const myContext = useContext(ThemeContext);
     const petName = myContext.petVariable.name;
-    const petId = myContext.petVariable.id; 
-    const [palComponents, setPalComponents] = useState([]);
-    const [searchedForPals, setSearchedForPals] = useState(variant ? false : true);
-
-    const findPals=()=>{
-        axios
-            .get(`${process.env.REACT_APP_BACKEND_URL}/pet/${petId}/findpals`)
-            .then((response)=>{
-                setPalComponents(response.data);
-                setSearchedForPals(true);
-            }, [palComponents])
-            .catch((err)=> console.log(err))
-   
-                console.log(palComponents);
-                setPalComponents(palComponents);
-            }
 
     return (
         <div className="navBar">
@@ -30,21 +14,8 @@ const NavSection = ({ variant }) => {
             </h1>
             <div>
                 <button className="yourPals">Your Pals</button>
-                <button className="findPals" onClick={findPals}>Find Pals</button>
+                <button className="findPals"><Link to='/findpals'>Find Pals</Link></button>
             </div>
-            {palComponents.map((pal)=>(
-                <div className="palsList">
-                    <p>{pal.name}</p>
-                    <p>{pal.bio}</p>
-                    <p>{pal.age}</p> 
-                    <p>{pal.gender}</p> 
-                    <p>{pal.species}</p>
-                    <p>{pal.zipcode}</p>
-                </div>
-            ))}
         </div>
-    )
-}
-
-       
+            );}
 export default NavSection;

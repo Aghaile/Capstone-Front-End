@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import NavSection from "../Components/NavSection"
-import FindPals from "../Components/FindPalsSection";
-import "./FindPals.css";
+import FindPalsSection from "../Components/FindPalsSection";
+import "./FindPalsPage.css";
 
 
 function FindPalsPage(){
@@ -15,7 +15,7 @@ function FindPalsPage(){
             </div>
 
             <div class="float-child" id="mainPart">
-                <FindPals />
+                <FindPalsSection />
             </div>
         </div>
             

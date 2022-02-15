@@ -5,11 +5,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import PetProfile from "./PetProfile";
 // import {BrowserRouter as Routes} from "react-router-dom";
-
 // import PetProfile from "./PetProfile";
-
 const Welcome = () => {
-
 const myContext = useContext(ThemeContext);
 let navigate = useNavigate();
 
@@ -22,16 +19,13 @@ const onIdChange = (event) => {
     [event.target.name]: event.target.value,
     });
 };
-
 const onLoginFormSubmit = (event) => {
     event.preventDefault();
     // const currentId = document.getElementById("id");
     let validId = true;
-
     if (loginField.id.length === 0){
     validId = false;
     }
-
     if (validId){
     console.log(loginField);
     const loginId = parseInt(loginField.id)
@@ -50,11 +44,9 @@ const onLoginFormSubmit = (event) => {
         )
     }
 }
-
 const onCreateProfile = () => {
     navigate('/createprofile');
 }
-
 return (
     <div>
     <form>

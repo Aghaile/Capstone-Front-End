@@ -211,15 +211,14 @@ const YourProfile = () => {
         {petSelf ? <button onClick={deleteProfileSubmit}>Delete Profile</button> : <p></p>}
     </div>;
 
-
-    return(<div>  
-        <div className="profileInfo">
-            {profileInfo}
-            {petSelf ? <p>{editProfileForm}</p> : <p></p>}
-        </div>
+    return(
+        <div>
+            <NavSection/>
+        {profileInfo}
+        {petSelf ? <p>{editProfileForm}</p> : <p></p>}
 
         <div className="manageProfileButtons">
-            {profileButtons}
+        {profileButtons}
         </div>
         <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
     </div>)
