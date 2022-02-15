@@ -2,12 +2,29 @@ import "./YourProfile.css";
 import axios from "axios";
 import NavSection from "./NavSection";
 import React, { useContext , useState, useEffect} from "react";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ro
 import {Link} from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ThemeContext from "../ThemeContext";
 
 const YourProfile = () => {
 
+<<<<<<< HEAD
+=======
+=======
+import {Link, useNavigate} from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import ThemeContext from "../ThemeContext";
+import Footer from "./Footer";
+
+const YourProfile = () => {
+
+    let navigate = useNavigate();
+>>>>>>> 496392846dea521f1e6386c884f26cfca3c7ea97
+>>>>>>> ro
     const myContext = useContext(ThemeContext);
     const petId = myContext.petVariable.id;
     const [petInfo, setPetInfo] = useState({});
@@ -52,6 +69,13 @@ const YourProfile = () => {
             .then(() => {
                 setDeleteProfile(true)
                 setProfileExists(false)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                navigate("/welcome")
+>>>>>>> 496392846dea521f1e6386c884f26cfca3c7ea97
+>>>>>>> ro
             })
             console.log("Profile Deleted")
             .catch((err) => {
@@ -213,6 +237,10 @@ const YourProfile = () => {
 
     return(
         <div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ro
             <NavSection/>
         {profileInfo}
         {petSelf ? <p>{editProfileForm}</p> : <p></p>}
@@ -221,6 +249,25 @@ const YourProfile = () => {
         {profileButtons}
         </div>
         <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button>
+<<<<<<< HEAD
+=======
+=======
+        <div>
+            <NavSection/>
+        </div>
+        <div className="profileInfo">
+        {profileInfo}
+        {petSelf ? <p>{editProfileForm}</p> : <p></p>}
+        <div className="buttons">
+        {profileButtons}
+        {/* <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button> */}
+        </div>
+        <div>
+            <Footer/>
+        </div>
+    </div>
+>>>>>>> 496392846dea521f1e6386c884f26cfca3c7ea97
+>>>>>>> ro
     </div>)
 }
 export default YourProfile;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .float-container {
     border: 3px solid #fff;
     padding: 20px;
@@ -35,3 +36,40 @@
     position: absolute;
     bottom: 5px;
 }
+=======
+/* .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+} */ 
+
+/* .float-child{
+    display: flex;
+    border-radius: 25px;
+    background: #72c4d8;
+    padding: 20px;
+    border: 2px;
+    height: 600px
+} */
+/* 
+#navBar{
+    width: 400px;
+    float: left;
+} */
+
+/* #mainPart{
+    width: 600px;;
+    float: right;
+} */
+
+/* .returnHomeButtonOnProfile{
+    display: flex;
+    justify-content: center; 
+} */
+
+/* .returnHomeButtonOnProfile{
+    display: flex;
+    justify-content: center; 
+    position: absolute;
+    bottom: 5px;
+}
+>>>>>>> ro
