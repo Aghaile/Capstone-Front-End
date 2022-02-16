@@ -1,18 +1,18 @@
 .profileInfo{
     border-radius:15px;
     width:200px;
-    height:230px;
+    height:250px;
     padding: 15px;
     margin:25px;
     border-style: solid;
     border-color: #63ACBE;
     text-align:"center";
-    position:"absolute";
+    /* position:"absolute"; */
     top:"50%";
     transform:"translate(0, 50%)";
     margin-left:600px;
 }
 
-.buttons {
-    border-radius: 50%;
+.child {
+    display: inline-block;
 }

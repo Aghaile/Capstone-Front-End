@@ -238,19 +238,30 @@ const YourProfile = () => {
             <NavSection/>
         </div>
         <div className="profileInfo">
-        <div className="photo">
+        {/* <div className="photo" style={{display:"inline-block"}}>
             <Uploady
-                destination={{ url: "http://localhost:5000/" }}>
-                <PreviewContainer>
-                    <UploadPreview />
+                destination={{ url: "http://localhost:5000/" }}style={{display:"inline-block"}}>
+                <PreviewContainer style={{display:"inline-block"}}>
+                    <UploadPreview style={{display:"inline-block"}}/>
                 </PreviewContainer>
                 <UploadButton/>
             </Uploady>
-        </div>
+        </div> */}
         {profileInfo}
         {petSelf ? <p>{editProfileForm}</p> : <p></p>}
-        <div className="buttons">
-        {profileButtons}
+        <div className="parent">
+            <div className="child">
+            <Uploady
+                destination={{ url: "http://localhost:5000/" }}>
+                <PreviewContainer>
+                    <UploadPreview/>
+                </PreviewContainer>
+                <UploadButton/>
+            </Uploady>
+            </div>
+            <div className="child">
+                {profileButtons}
+            </div>
         {/* <button className="goHomeButton"><Link to="/welcome">Return Home</Link></button> */}
         </div>
         <div>
