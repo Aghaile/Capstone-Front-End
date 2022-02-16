@@ -49,27 +49,8 @@ const onLoginFormSubmit = (event) => {
 const onCreateProfile = () => {
     navigate('/createprofile');
 }
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
->>>>>>> ro
 return (
-    <div>
-    <form>
-        {/* <div className= "errorMessageContainer" value={errorMessage}><p>Valid pet ID required.</p></div> */}
-        <input
-        id="id"
-        name="id"
-        minLength={1}
-        value={loginField.id}
-        onChange={onIdChange}
-        />
-    </form>
-    <button onClick={onLoginFormSubmit}>Login</button>
-    <button onClick={onCreateProfile}><Link to='/createprofile'>Create Profile</Link></button>
-=======
-  return (
     <div className="welcomeBackground">
       {/* <Title className="titleBox"/> */}
         <div className="welcomeBox" style={{position:"absolute",top:"40%",transform:"translate(0, 50%)",marginLeft:600}}><h1>Paw Pals</h1>
@@ -86,7 +67,6 @@ return (
         <button onClick={onLoginFormSubmit}>Login</button>
         <button onClick={onCreateProfile}><Link to='/createprofile'>Create Profile</Link></button>
         </div>
->>>>>>> 496392846dea521f1e6386c884f26cfca3c7ea97
     </div>
 )
 }

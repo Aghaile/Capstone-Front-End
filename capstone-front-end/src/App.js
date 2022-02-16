@@ -31,6 +31,9 @@ function App() {
       </ThemeContext.Provider>
 
   )
+}
+
+export default App;
 
 
 
@@ -90,4 +93,3 @@ function App() {
 //       </Router>
 //     </Provider>
 //   );
-}
